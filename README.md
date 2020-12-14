@@ -127,3 +127,9 @@ http://japanknowledge.com/articles/blognihongo/entry.html?entryid=113 (ja-techni
 
 
 # TODO: reviewdogを導入してみたい
+
+
+# textlint導入メモ
+``` shell
+git submodule add https://github.com/prh/rules.git prh-rules
+```
