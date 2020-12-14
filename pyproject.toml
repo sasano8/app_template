@@ -1,0 +1,62 @@
+[tool.poetry]
+name = "app_template"
+version = "0.1.0"
+description = ""
+authors = ["sasano8 <y-sasahara@ys-method.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+
+[tool.poetry.dev-dependencies]
+mkdocs = "^1.1.2"
+black = "^20.8b1"
+flake8 = "^3.8.4"
+isort = "^5.6.4"
+mypy = "^0.790"
+tox = "^3.20.1"
+
+[tool.black]
+line-length = 88 # sample
+
+[tool.isort]
+profile = "black"  # blackの設定を利用する
+atomic = false  # エラー時に出力を保存しない場合はtrue
+
+[tool.flake8]
+line-length = 20
+exclude = [".venv"]
+# ignore = E203,W503,W504 blackと衝突する警告を無視する
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+
+# 複数の環境でテストを行えるツール
+[tool.tox]
+
+# pyprojectは現在ヒアドキュメント形式でしかサポートしていない
+legacy_tox_ini = """
+[tox]
+# パッケージとして出力しないか否か
+skipsdist = True
+isolated_build = True
+envlist = py38, flake8
+
+[testenv]
+# ローカル環境のコマンドで問題ないコマンド群を指定する
+whitelist_externals = poetry
+
+# poetryに任せるため、パッケージをインストールしない
+skip_install = True
+
+# commands = py.test
+# deps =
+#   pytest
+
+[testenv:flake8]
+commands =
+  poetry install -v
+  poetry run flake8 backend
+  poetry run mypy backend
+"""
