@@ -143,14 +143,3 @@ clone時に--recursiveを忘れた場合は次のとおり。
 ```
 git submodule update --init --recursive
 ```
-
-Python
-Python
-Python
-
-作業者の方。
-python
-python
-基づいています。
-
-こんにちわ(笑)
