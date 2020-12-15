@@ -10,4 +10,4 @@ meta:
     - https://github.com/sasano8/prh-my-rules
 
 imports:
-  - ./prh-my-rules/prh.yml
+  - ./prh-my-rules/prh-rules.yml
