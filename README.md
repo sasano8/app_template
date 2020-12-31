@@ -85,12 +85,17 @@ npm install
 
 加えて、必要に応じてエディタ用のプラグインを導入してください。
 
-## VSCode用プラグインの導入
+## VSCode
+
+### プラグインの導入
 VSCode用プラグインを導入する場合は、次のプラグインを導入してください。
 
 - EditorConfig for VS Code
 - vscode-textlint
 - vscode-reveal（オプションです。プレゼン資料作成ツールです）
+
+### 設定
+- ユーザー設定 => 設定 => files.associations　で検索 => {"*.json", "jsonc"} を追加（jsonのコメントを許可する。これはtextlintの機能ではありません）
 
 ## PyCharm用プラグインの導入
 - 未確認
